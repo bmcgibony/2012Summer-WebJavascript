@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavascriptMadLibs</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="The Chopping Block, Inc." />
+	<meta name="geo.country" content="US" />
+	<meta name="dc.language" content="en" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<style type="text/css" media="screen">		
+		/*local styles if any (quick tests and local only overrides)*/
+	</style>
+</head>
+<body>
+
+	<div class="wrap" >
+		Project: JavascriptMadLibs
+<ul>		
+		<li>1) Place to enter words that will be in the story</li>
+		<li>2) Way to say "Make those words show up in the story"</li>
+		<li>3) Story</li>
+		
+</ul>	
+
+
+	<p>
+		Mood: <input type="text" value="" id="word1"><br>
+		Name 1: <input type="text" value="" id="word2"><br>
+		Name 2: <input type="text" value="" id="word3"><br>
+		Fave NBA team: <select id="word4">
+<option value="Cavs">Cavs</option>
+<option value="Knicks">Knicks</option>
+<option value="Thunder">Thunder</option>
+</select>
+			<br>
+		Brooklyn bar: <input type="text" value="" id="word5"><br>
+		Food: <input type="text" value="" id="word6">	<br>
+		Number: <input type="number" id="word7">
+	</p>
+
+
+	<span onclick="makeStory();">MadLib</span>
+
+	<p>
+	<div id="story1"></div>
+</p>
+	<p>
+		<div id="story2"></div>
+		<div id="story3"></div>
+	</p>
+		<p>
+		<div id="story4"></div>
+	</p>
+
+</div>
+<script type="text/javascript" charset="utf-8">
+
+   		var makeStory = function makeStory(){
+
+   		// returns a random number between the two limits provided 
+		var randomRange = function randomRange(min, max)
+		{
+		return ((Math.floor(Math.random()*(max-min)) + min)); 
+		}
+
+		var somenum = randomRange(1,4);
+
+		var makeStory1 = function makeStory1()
+		{
+			var word1 = document.getElementById('word1').value;
+		var word2 = document.getElementById('word2').value;
+		var word3 = document.getElementById('word3').value;
+		var word4 = document.getElementById('word4').value;
+		var word5 = document.getElementById('word5').value;
+		var word6 = document.getElementById('word6').value;
+		var word7 = document.getElementById('word7').value;
+		
+		var story1 = "Dude, I'm so  " + word1 + " for tonight's Brooklyn Nets game!\" said " + word2 + "."
+		
+		var story2 = "\"I know!\" replied " + word3 + ". \"Too bad the " + word4 + " are probably gonna win by " + word7 + " points."
+
+		if (word7 == 1)
+			var story3 = "I bet it comes down to a buzzer-beater!\"";
+		else if (word7 > 1 && word7 < 7)
+			var story3 = "Should be pretty close.\"";
+		else 
+			var story3 = "This'll be a blow out.\"";
+
+		var story4 = word2 + " pondered this possibility for a minute, and then said, \"It's all good. Let's just go out to " + word5 + " afterwards for some brews & " + word6 + ".\" Yay! And then they high-fived."
+		
+		document.getElementById('story1').innerHTML = story1;
+		document.getElementById('story2').innerHTML = story2;
+		document.getElementById('story3').innerHTML = story3;
+		document.getElementById('story4').innerHTML = story4;
+		}
+
+		var makeStory2 = function makeStory2()
+		{
+		
+		var word1 = document.getElementById('word1').value;
+		var word2 = document.getElementById('word2').value;
+		var word3 = document.getElementById('word3').value;
+		var word4 = document.getElementById('word4').value;
+		var word5 = document.getElementById('word5').value;
+		var word6 = document.getElementById('word6').value;
+		var word7 = document.getElementById('word7').value;
+
+		var story1 = "This guy " + word2 + " was feeling " + word1 + " after " + word7 + " long, hard days at work."
+		
+		var story2 = "So " + word2 + " decided to go to " + word5 + " to chow down on some delicious " + word6 + "."
+
+		var story3 = ""
+
+		var story4 = "When he or she got there, he or she saw that all the best players from the " + word4 + " were there too! Those are some robust men, so they were already on their second helping of " + word6 + ". Plus someone named " + word3 + " was there trying to get autographs."
+
+		document.getElementById('story1').innerHTML = story1;
+		document.getElementById('story2').innerHTML = story2;
+		document.getElementById('story3').innerHTML = story3;
+		document.getElementById('story4').innerHTML = story4;
+
+		}
+
+		var makeStory3 = function makeStory3()
+		{
+		var word1 = document.getElementById('word1').value;
+		var word2 = document.getElementById('word2').value;
+		var word3 = document.getElementById('word3').value;
+		var word4 = document.getElementById('word4').value;
+		var word5 = document.getElementById('word5').value;
+		var word6 = document.getElementById('word6').value;
+		var word7 = document.getElementById('word7').value;
+		
+		var story1 = word2 + " and " + word3 + " both dreamt of someday playing for the " + word4 + "."
+		
+		var story2 = "But instead of practicing their dribbling skills, they spent too much time eating " + word6 + "."
+
+		var story3 = "After all the " + word6 + ", they were feeling very " + word1 + "."
+
+		var story4 = "Eventually they made the team, but only after trying out " + word7 + " times!"
+		
+		document.getElementById('story1').innerHTML = story1;
+		document.getElementById('story2').innerHTML = story2;
+		document.getElementById('story3').innerHTML = story3;
+		document.getElementById('story4').innerHTML = story4;
+		}
+
+		if (somenum == 1) {
+			makeStory1();
+		}
+
+		else if (somenum == 2) {
+			makeStory2();
+		}
+
+		else {
+			makeStory3();
+		}
+
+/*
+   		if (somenum == 1) 
+   		{
+		
+		var word1 = document.getElementById('word1').value;
+		var word2 = document.getElementById('word2').value;
+		var word3 = document.getElementById('word3').value;
+		var word4 = document.getElementById('word4').value;
+		var word5 = document.getElementById('word5').value;
+		var word6 = document.getElementById('word6').value;
+		var word7 = document.getElementById('word7').value;
+		
+		var story1 = "Dude, I'm so  " + word1 + " for tonight's Brooklyn Nets game!\" said " + word2 + "."
+		
+		var story2 = "\"I know!\" replied " + word3 + ". \"Too bad the " + word4 + " are probably gonna win by " + word7 + " points."
+
+		if (word7 == 1)
+			var story3 = "I bet it comes down to a buzzer-beater!\"";
+		else if (word7 > 1 && word7 < 7)
+			var story3 = "Should be pretty close.\"";
+		else 
+			var story3 = "This'll be a blow out.\"";
+
+		var story4 = word2 + " pondered this possibility for a minute, and then said, \"It's all good. Let's just go out to " + word5 + " afterwards for some brews & " + word6 + ".\" Yay! And then they high-fived."
+		
+		document.getElementById('story1').innerHTML = story1;
+		document.getElementById('story2').innerHTML = story2;
+		document.getElementById('story3').innerHTML = story3;
+		document.getElementById('story4').innerHTML = story4;
+		
+		}
+
+		else if (somenum == 2) {
+			document.write("story2")
+		}
+
+		else {
+			document.write("story 3 yall")
+		}
+*/
+	}
+	
+	
+</script>	
+</body>
+</html>
